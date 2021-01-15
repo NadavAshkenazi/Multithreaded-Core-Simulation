@@ -82,7 +82,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/main.cpp">
+		<Unit filename="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/core_api.cpp">
+			<Option target="ca_hw4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/core_api.h">
+			<Option target="ca_hw4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/main.c">
+			<Option target="ca_hw4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/sim_api.c">
+			<Option target="ca_hw4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/sim_api.h">
 			<Option target="ca_hw4"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/CMakeLists.txt">

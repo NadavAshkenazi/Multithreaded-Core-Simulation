@@ -123,32 +123,86 @@ ca_hw4/fast:
 	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/build
 .PHONY : ca_hw4/fast
 
-main.o: main.cpp.o
+core_api.o: core_api.cpp.o
+
+.PHONY : core_api.o
+
+# target to build an object file
+core_api.cpp.o:
+	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/core_api.cpp.o
+.PHONY : core_api.cpp.o
+
+core_api.i: core_api.cpp.i
+
+.PHONY : core_api.i
+
+# target to preprocess a source file
+core_api.cpp.i:
+	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/core_api.cpp.i
+.PHONY : core_api.cpp.i
+
+core_api.s: core_api.cpp.s
+
+.PHONY : core_api.s
+
+# target to generate assembly for a file
+core_api.cpp.s:
+	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/core_api.cpp.s
+.PHONY : core_api.cpp.s
+
+main.o: main.c.o
 
 .PHONY : main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/main.cpp.o
-.PHONY : main.cpp.o
+main.c.o:
+	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/main.c.o
+.PHONY : main.c.o
 
-main.i: main.cpp.i
+main.i: main.c.i
 
 .PHONY : main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/main.cpp.i
-.PHONY : main.cpp.i
+main.c.i:
+	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/main.c.i
+.PHONY : main.c.i
 
-main.s: main.cpp.s
+main.s: main.c.s
 
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/main.cpp.s
-.PHONY : main.cpp.s
+main.c.s:
+	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/main.c.s
+.PHONY : main.c.s
+
+sim_api.o: sim_api.c.o
+
+.PHONY : sim_api.o
+
+# target to build an object file
+sim_api.c.o:
+	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/sim_api.c.o
+.PHONY : sim_api.c.o
+
+sim_api.i: sim_api.c.i
+
+.PHONY : sim_api.i
+
+# target to preprocess a source file
+sim_api.c.i:
+	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/sim_api.c.i
+.PHONY : sim_api.c.i
+
+sim_api.s: sim_api.c.s
+
+.PHONY : sim_api.s
+
+# target to generate assembly for a file
+sim_api.c.s:
+	$(MAKE) -f CMakeFiles/ca_hw4.dir/build.make CMakeFiles/ca_hw4.dir/sim_api.c.s
+.PHONY : sim_api.c.s
 
 # Help Target
 help:
@@ -159,9 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ca_hw4"
+	@echo "... core_api.o"
+	@echo "... core_api.i"
+	@echo "... core_api.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... sim_api.o"
+	@echo "... sim_api.i"
+	@echo "... sim_api.s"
 .PHONY : help
 
 

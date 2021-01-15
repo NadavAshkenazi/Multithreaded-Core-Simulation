@@ -57,30 +57,60 @@ include CMakeFiles/ca_hw4.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ca_hw4.dir/flags.make
 
-CMakeFiles/ca_hw4.dir/main.cpp.o: CMakeFiles/ca_hw4.dir/flags.make
-CMakeFiles/ca_hw4.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ca_hw4.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ca_hw4.dir/main.cpp.o -c "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/main.cpp"
+CMakeFiles/ca_hw4.dir/main.c.o: CMakeFiles/ca_hw4.dir/flags.make
+CMakeFiles/ca_hw4.dir/main.c.o: ../main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ca_hw4.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ca_hw4.dir/main.c.o   -c "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/main.c"
 
-CMakeFiles/ca_hw4.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ca_hw4.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/main.cpp" > CMakeFiles/ca_hw4.dir/main.cpp.i
+CMakeFiles/ca_hw4.dir/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ca_hw4.dir/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/main.c" > CMakeFiles/ca_hw4.dir/main.c.i
 
-CMakeFiles/ca_hw4.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ca_hw4.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/main.cpp" -o CMakeFiles/ca_hw4.dir/main.cpp.s
+CMakeFiles/ca_hw4.dir/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ca_hw4.dir/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/main.c" -o CMakeFiles/ca_hw4.dir/main.c.s
+
+CMakeFiles/ca_hw4.dir/core_api.cpp.o: CMakeFiles/ca_hw4.dir/flags.make
+CMakeFiles/ca_hw4.dir/core_api.cpp.o: ../core_api.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ca_hw4.dir/core_api.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ca_hw4.dir/core_api.cpp.o -c "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/core_api.cpp"
+
+CMakeFiles/ca_hw4.dir/core_api.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ca_hw4.dir/core_api.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/core_api.cpp" > CMakeFiles/ca_hw4.dir/core_api.cpp.i
+
+CMakeFiles/ca_hw4.dir/core_api.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ca_hw4.dir/core_api.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/core_api.cpp" -o CMakeFiles/ca_hw4.dir/core_api.cpp.s
+
+CMakeFiles/ca_hw4.dir/sim_api.c.o: CMakeFiles/ca_hw4.dir/flags.make
+CMakeFiles/ca_hw4.dir/sim_api.c.o: ../sim_api.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ca_hw4.dir/sim_api.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ca_hw4.dir/sim_api.c.o   -c "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/sim_api.c"
+
+CMakeFiles/ca_hw4.dir/sim_api.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ca_hw4.dir/sim_api.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/sim_api.c" > CMakeFiles/ca_hw4.dir/sim_api.c.i
+
+CMakeFiles/ca_hw4.dir/sim_api.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ca_hw4.dir/sim_api.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/sim_api.c" -o CMakeFiles/ca_hw4.dir/sim_api.c.s
 
 # Object files for target ca_hw4
 ca_hw4_OBJECTS = \
-"CMakeFiles/ca_hw4.dir/main.cpp.o"
+"CMakeFiles/ca_hw4.dir/main.c.o" \
+"CMakeFiles/ca_hw4.dir/core_api.cpp.o" \
+"CMakeFiles/ca_hw4.dir/sim_api.c.o"
 
 # External object files for target ca_hw4
 ca_hw4_EXTERNAL_OBJECTS =
 
-ca_hw4: CMakeFiles/ca_hw4.dir/main.cpp.o
+ca_hw4: CMakeFiles/ca_hw4.dir/main.c.o
+ca_hw4: CMakeFiles/ca_hw4.dir/core_api.cpp.o
+ca_hw4: CMakeFiles/ca_hw4.dir/sim_api.c.o
 ca_hw4: CMakeFiles/ca_hw4.dir/build.make
 ca_hw4: CMakeFiles/ca_hw4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ca_hw4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ca_hw4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ca_hw4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
