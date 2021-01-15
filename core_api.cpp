@@ -9,6 +9,9 @@
 
 using namespace std;
 
+/**
+ * class containing the entire context of a thread
+ */
 class ThreadData{
 public:
     int tid;
@@ -24,13 +27,16 @@ public:
     }
 };
 
+/**
+ * base class for a core
+ */
 class baseCore{
 protected:
     int numOfThreads;
     std::vector<ThreadData*>* threads;
     double cycles;
     double instructionCounter;
-    bool _noOp;
+    bool _nop;
     bool _isIdle;
 public:
     baseCore();
@@ -45,7 +51,7 @@ public:
 };
 
 
-baseCore::baseCore(): cycles(0), instructionCounter(0), _noOp(false), _isIdle(false) {
+baseCore::baseCore(): cycles(0), instructionCounter(0), _nop(false), _isIdle(false) {
     numOfThreads = SIM_GetThreadsNum();
     threads = new vector<ThreadData*>();
     for (int i = 0; i < this->numOfThreads; i++){
@@ -60,6 +66,10 @@ baseCore::~baseCore(){
     }
 }
 
+
+/**
+ * @return true if all threads are on halt, false otherwise
+ */
 bool baseCore::isOver(){
     for (vector<ThreadData*>::iterator it = threads->begin(); it != threads->end(); it++){
         if (!(*it)->isHalt)
@@ -68,14 +78,21 @@ bool baseCore::isOver(){
     return true;
 }
 
-
-
+/**
+ * reduces all hold counters of threads by 1
+ */
 void baseCore::reduceHoldCounter(){
     for (vector<ThreadData*>::iterator it = threads->begin(); it != threads->end(); it++){
         if ((*it)->cyclesOnHold > 0)
             (*it)->cyclesOnHold --;
     }
 }
+
+/**
+ * executes the next line of a given thread
+ * @param inst - the instruction to be executed
+ * @param threadNum - thread running
+ */
 void baseCore::executeLine(Instruction* inst, int threadNum){
     if (inst->opcode == CMD_HALT) {
         threads->at(threadNum)->isHalt = true;
@@ -89,7 +106,7 @@ void baseCore::executeLine(Instruction* inst, int threadNum){
     else
         src2 = threads->at(threadNum)->context->reg[inst->src2_index_imm];
 
-    switch (inst->opcode) {
+    switch (inst->opcode) { //decide on the operation to run
         case CMD_ADD:
             *dstReg = src1 + src2;
             break;
@@ -116,6 +133,11 @@ void baseCore::executeLine(Instruction* inst, int threadNum){
 
 }
 
+/**
+ * copies the wanted context to the given pointer
+ * @param context - pointer to copy to
+ * @param threadNum - thread of the wanted context
+ */
 void baseCore::getContext(tcontext* context, int threadNum){
     for (int i = 0; i < REGS_COUNT; i++){
         context->reg[i] = threads->at(threadNum)->context->reg[i];
@@ -123,70 +145,80 @@ void baseCore::getContext(tcontext* context, int threadNum){
     return;
 }
 
+/**
+ * @return CPI of the simulation
+ */
 double baseCore::getCPI(){
     return cycles/instructionCounter;
 }
 
-
-
+/**
+ * class of a Blocked Multi-Threaded core
+ */
 class BlockedMt: public baseCore{
 public:
     int getNextCycle(int currentThread) override;
     void runSim() override;
 };
 
+/**
+ * find thread for next cycle under blockedMT rules
+ * @param currentThread
+ * @return next thread to eun
+ */
 int BlockedMt::getNextCycle(int currentThread){
-    if (isOver())
+    if (isOver()) // return if simulation is done
         return currentThread;
-    if (threads->at(currentThread)->isHalt || threads->at(currentThread)->cyclesOnHold > 0){
-        _noOp = true;
-        for (int i = currentThread; i < numOfThreads + currentThread; i++) {
+    if (threads->at(currentThread)->isHalt || threads->at(currentThread)->cyclesOnHold > 0){ // if thread cannot run
+        _nop = true;
+        for (int i = currentThread; i < numOfThreads + currentThread; i++) { // iterated over all threads cyclically
             int tempThread = i % numOfThreads;
-            if (threads->at(tempThread)->isHalt || threads->at(tempThread)->cyclesOnHold >0) {
+            if (threads->at(tempThread)->isHalt || threads->at(tempThread)->cyclesOnHold >0) { // thread cannot run
                 continue;
             }
-            _isIdle = false;
+            _isIdle = false; // found a thread that can run
             return tempThread;
         }
-        _isIdle = true;
+        _isIdle = true; // no thread can run
         return currentThread;
     }
-    else{
-        _noOp = false;
+    else{ //current thread can run
+        _nop = false;
         _isIdle = false;
         return currentThread;
     }
 }
 
+/**
+ * run simulation under blockedMT rules
+ * @param currentThread
+ * @return next thread to eun
+ */
 void BlockedMt::runSim(){
     Instruction* inst = new Instruction();
 
     int line;
     int threadNum = 0;
 
-    while(!isOver()){
+    while(!isOver()){ // run until simulation is over
         cycles++;
-        if (_noOp){
-            if (!_isIdle){
+        if (_nop){ // check if there is an operation to be run
+            if (!_isIdle){ // no operation because of context switch
                 cycles += SIM_GetSwitchCycles() -1;
-                for (int i = 0; i < SIM_GetSwitchCycles() -1; i++) {
+                for (int i = 0; i < SIM_GetSwitchCycles() -1; i++) { //simulate context switch overhead
                     reduceHoldCounter();
                 }
             }
-
-            else {
-                int debug = 0;
-            }
         }
-        else {
+        else { // run current operation
             line = threads->at(threadNum)->lastLine + 1;
             SIM_MemInstRead (line, inst, threadNum);
             executeLine(inst, threadNum);
             threads->at(threadNum)->lastLine  = line;
             instructionCounter ++;
         }
-        threadNum = getNextCycle(threadNum);
-        reduceHoldCounter();
+        threadNum = getNextCycle(threadNum); // find thread for next cycle
+        reduceHoldCounter(); // mark cycle over of all waiting threads
     }
 }
 
@@ -196,22 +228,31 @@ public:
     void runSim() override;
 };
 
+/**
+ * find thread for next cycle under FinegrainedMT rules
+ * @param currentThread
+ * @return next thread to eun
+ */
 int FinegrainedMT::getNextCycle(int currentThread){
-    if (isOver())
+    if (isOver()) // return if simulation is done
         return currentThread;
-    for (int i = currentThread + 1; i < numOfThreads + (currentThread + 1); i++) {
+    for (int i = currentThread + 1; i < numOfThreads + (currentThread + 1); i++) { // iterated over all threads cyclically
             int tempThread = i % numOfThreads;
-            if (threads->at(tempThread)->isHalt || threads->at(tempThread)->cyclesOnHold >0) {
+            if (threads->at(tempThread)->isHalt || threads->at(tempThread)->cyclesOnHold >0) { // thread cannot run
                 continue;
             }
-            _isIdle = false;
+            _isIdle = false; // found a thread that can run
             return tempThread;
         }
-    _isIdle = true;
+    _isIdle = true; // no thread can run
     return (currentThread + 1) % numOfThreads;
 }
 
-
+/**
+ * run simulation under FinegrainedMT rules
+ * @param currentThread
+ * @return next thread to eun
+ */
 void FinegrainedMT::runSim(){
     Instruction* inst = new Instruction();
 
