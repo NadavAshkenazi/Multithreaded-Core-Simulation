@@ -6,3 +6,33 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/core_api.cpp
+core_api.h
+/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/core_api.h
+sim_api.h
+/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/sim_api.h
+vector
+/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/vector
+stdio.h
+-
+string
+-
+
+/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/core_api.h
+stdbool.h
+-
+
+/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/sim_api.h
+stdint.h
+-
+stdbool.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+assert.h
+-
+
