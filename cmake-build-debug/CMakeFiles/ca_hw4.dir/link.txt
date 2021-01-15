@@ -1,1 +1,3 @@
-/usr/bin/c++  -g   CMakeFiles/ca_hw4.dir/main.c.o CMakeFiles/ca_hw4.dir/core_api.cpp.o CMakeFiles/ca_hw4.dir/sim_api.c.o  -o ca_hw4 
+"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\ca_hw4.dir/objects.a
+C:\TDM-GCC-64\bin\ar.exe cr CMakeFiles\ca_hw4.dir/objects.a @CMakeFiles\ca_hw4.dir\objects1.rsp
+C:\TDM-GCC-64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\ca_hw4.dir/objects.a -Wl,--no-whole-archive  -o ca_hw4.exe -Wl,--out-implib,libca_hw4.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ca_hw4.dir\linklibs.rsp

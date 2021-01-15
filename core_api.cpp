@@ -220,6 +220,7 @@ void BlockedMt::runSim(){
         threadNum = getNextCycle(threadNum); // find thread for next cycle
         reduceHoldCounter(); // mark cycle over of all waiting threads
     }
+    delete inst;
 }
 
 class FinegrainedMT: public baseCore{
@@ -245,7 +246,7 @@ int FinegrainedMT::getNextCycle(int currentThread){
             return tempThread;
         }
     _isIdle = true; // no thread can run
-    return (currentThread + 1) % numOfThreads;
+    return currentThread;
 }
 
 /**
@@ -271,6 +272,7 @@ void FinegrainedMT::runSim(){
         threadNum = getNextCycle(threadNum);
         reduceHoldCounter();
     }
+    delete inst;
 }
 
 baseCore* core;
@@ -300,7 +302,6 @@ double CORE_FinegrainedMT_CPI(){
 
 void CORE_BlockedMT_CTX(tcontext* context, int threadid) {
     core->getContext((context+threadid), threadid);
-    return;
 }
 
 void CORE_FinegrainedMT_CTX(tcontext* context, int threadid) {

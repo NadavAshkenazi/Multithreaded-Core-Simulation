@@ -5,8 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/main.c" "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/cmake-build-debug/CMakeFiles/ca_hw4.dir/main.c.o"
-  "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/sim_api.c" "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/cmake-build-debug/CMakeFiles/ca_hw4.dir/sim_api.c.o"
+  "C:/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/main.c" "C:/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/cmake-build-debug/CMakeFiles/ca_hw4.dir/main.c.obj"
+  "C:/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/sim_api.c" "C:/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/cmake-build-debug/CMakeFiles/ca_hw4.dir/sim_api.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -14,7 +14,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/core_api.cpp" "/mnt/c/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/cmake-build-debug/CMakeFiles/ca_hw4.dir/core_api.cpp.o"
+  "C:/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/core_api.cpp" "C:/Users/nadav ashkenazi/OneDrive - Technion/Technion/semester_6/Computer Architecture/hw/hw4/ca_hw4/cmake-build-debug/CMakeFiles/ca_hw4.dir/core_api.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

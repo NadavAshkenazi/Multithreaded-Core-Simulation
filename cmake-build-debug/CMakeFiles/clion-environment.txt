@@ -1,4 +1,4 @@
-ToolSet: Ubuntu 20.04.1 LTS (local)@C:\Users\nadav ashkenazi\AppData\Local\Microsoft\WindowsApps\ubuntu.exe
+ToolSet: w64 7.0 (local)@C:\TDM-GCC-64
 Options: 
 
 Options:
